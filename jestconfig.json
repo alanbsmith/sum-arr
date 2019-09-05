@@ -1,0 +1,15 @@
+{
+  "collectCoverage": true,
+  "collectCoverageFrom": [
+    "src/**",
+    "!lib/**"
+  ],
+  "transform": {
+    "^.+\\.(t|j)s$": "ts-jest"
+  },
+  "testRegex": "/src\/.+\\.test.ts",
+  "moduleFileExtensions": [
+    "ts",
+    "js"
+  ]
+}

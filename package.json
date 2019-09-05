@@ -1,0 +1,43 @@
+{
+  "name": "sum-arr",
+  "version": "1.0.0",
+  "description": "need to add some numbers in an array? We got you.",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc -w",
+    "lint": "tslint -p tsconfig.json ",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run lint && npm test",
+    "test": "jest --config jestconfig.json",
+    "test:coverage:report": "open ./coverage/lcov-report/index.html"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "keywords": [],
+  "author": "Alan B Smith <a.bax.smith@gmail.com> (https://github.com/alanbsmith)",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^24.0.18",
+    "husky": "^3.0.5",
+    "jest": "^24.9.0",
+    "lint-staged": "^9.2.5",
+    "prettier": "^1.18.2",
+    "ts-jest": "^24.0.2",
+    "tslint": "^5.19.0",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.6.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}
